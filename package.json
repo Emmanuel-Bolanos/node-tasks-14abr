@@ -1,0 +1,28 @@
+{
+  "name": "node-tasks-14abr",
+  "version": "1.0.0",
+  "description": "- [X] Task 1\r - [X] Task 2\r - [ ] Task 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node task3/server.js",
+    "dev": "nodemon task3/server.js",
+    "lint": "eslint task3/src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmanuel-Bolanos/node-tasks-14abr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emmanuel-Bolanos/node-tasks-14abr/issues"
+  },
+  "homepage": "https://github.com/Emmanuel-Bolanos/node-tasks-14abr#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
