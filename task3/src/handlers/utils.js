@@ -97,6 +97,13 @@ const showFiles = (req, res) => {
     const fileDir = path.join(publicDir, file);
 
     if (fs.statSync(fileDir).isFile) {
+      if (fileDir.match(/(\.\.)/g) || !(fileDir.match(/public/g))) {
+        res.writeHead(403, {
+          'Content-type': 'text/html',
+        });
+        res.end('<h1> ERROR 403: FORBIDDEN</h1><p>Only the public folder is available!</p>');
+        return;
+      }
       const content = fs.readFileSync(fileDir);
       res.writeHead(200, {
         'Content-type': 'text/html',
@@ -106,7 +113,6 @@ const showFiles = (req, res) => {
       throw new Error('File not available');
     }
   } catch (err) {
-    console.log(err);
     res.writeHead(400, {
       'Content-type': 'text/html',
     });
